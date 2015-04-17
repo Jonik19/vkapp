@@ -1,0 +1,13 @@
+<div>
+  <h4>Топ авторов</h4>
+   <hr>
+  <p>Показано <span ng-bind="topUsers.length"></span> лучших авторов</p>
+
+  <ul>
+    <li ng-repeat="topUser in topUsers">
+      <a href="#/author/{{topUser.vkOpts.id}}">{{topUser.vkOpts.first_name}} {{topUser.vkOpts.last_name}}</a>
+      <img ng-src="{{topUser.vkOpts.photo_50}}">
+      Рейтинг: {{topUser.rating}}
+    </li>
+  </ul>
+</div>

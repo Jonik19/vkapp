@@ -1,0 +1,17 @@
+<div>
+  <h4>Полученные поздравления</h4>
+    <hr>
+  <b>Всего поздравлений: <span>{{congratulations.length}}</span></b>
+  <div>
+    <ul>
+      <li ng-repeat="con in congratulations" ng-repeat-render-finish="autoScroll()">
+        <div>
+          <a href="#/send/{{con.id}}">Отправить</a>
+          <p>{{con.text}}</p>
+          <i>Отправлено: <span>{{con.sends}}</span></i>
+          <a user-pop-up="{{con.from_id}}" href>От кого</a>
+        </div>
+      </li>
+    </ul>
+  </div> 
+</div>

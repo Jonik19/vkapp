@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li ng-repeat="con in congratulations" ng-repeat-render-finish="autoScroll()">
+      <div>
+        <a href="#/send/{{con.id}}">Отправить</a>
+        <p>{{con.text}}</p>
+        <i>Отправлено: <span>{{con.sends}}</span></i>
+        <a user-pop-up="{{con.author}}" href="#/author/{{con.author}}">Автор</a>
+      </div>
+    </li>
+  </ul>
+</div> 

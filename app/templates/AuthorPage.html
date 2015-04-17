@@ -1,0 +1,16 @@
+<div>
+  <h4>Поздравления автора</h4>
+  <div>
+    <img ng-src="{{author.photo}}" >
+    <p>
+      <span style="border-bottom: 1px dashed #000;">Автор</span>
+      <a target="_blank" href="//vk.com/id{{author.id}}">{{author.first_name}} {{author.last_name}}</a>
+    </p>
+  </div>
+    <hr>
+  <b>Всего поздравлений: <span>{{congratulations.length}}</span></b>
+  
+  <div infinite-scroll="authorCtrl.loadMore()">
+    <template root-path="parts/" template-url="ConList.html"></template>
+  </div>
+</div>

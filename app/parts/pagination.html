@@ -1,0 +1,5 @@
+<div ng-if="pagesCount">
+  <button ng-disabled="currentPage == 1" ng-click="previusPage()">Назад</button>
+  Показано <span>{{currentPage}}</span> страницу из <span>{{pagesCount}}</span>
+  <button ng-disabled="currentPage == pagesCount" ng-click="nextPage()">Вперед</button>
+</div>

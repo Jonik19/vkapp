@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en" ng-app="vkApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Desktop</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/jquery/dist/jquery.min.js"></script>
+  <script src="//vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+ 
+</head>
+<body>
+  <div id="wrapper">
+    <div class="menu" ng-controller="MenuController">
+      <a href="#{{previusUrl}}" ng-show="previusUrl">Назад</a>
+      <ul>
+        <li>
+          <a ng-click="consShow = !consShow">Поздравления</a>
+          <ul ng-show="consShow">
+            <li ng-repeat="cat in categories">
+              <a href="#/category/{{cat.id}}">{{cat.name}}</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a ng-click="myConsShow = !myConsShow">Мои поздравления</a>
+          <ul ng-show="myConsShow">
+            <li>
+              <a href="#/my/get">Полученные</a>
+              <a href="#/my/send">Отправленные</a>
+              <a href="#/author/{{user.id}}">Добавленные</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#/top">Топ авторов</a></li>
+        <li><a href="#/add">Добавить +</a></li>
+      </ul>
+    </div>
+    
+    <div ng-view class="content"></div>
+  </div>
+
+
+  <script src="assets/angular/angular.min.js"></script>
+  <script src="assets/angular-route/angular-route.min.js"></script>
+  <script src="app.js"></script>
+
+  <!-- modules -->
+
+  <!-- controllers -->
+  <script src="controllers/SenderController.js"></script>
+  <script src="controllers/GetterController.js"></script>
+  <script src="controllers/CategoryController.js"></script>
+  <script src="controllers/MenuController.js"></script>
+  <script src="controllers/SendController.js"></script>
+  <script src="controllers/AddController.js"></script>
+  <script src="controllers/TopController.js"></script>
+  <script src="controllers/AuthorController.js"></script>
+
+  <!-- services -->
+  <script src="services/VkService.js"></script>
+  <script src="services/UserService.js"></script>
+  <script src="services/ApiService.js"></script>
+  <script src="services/VkCache.js"></script>
+
+  <!-- directives   -->
+  <script src="directives/TemplateDirective.js"></script>
+  <script src="directives/PaginationDirective.js"></script>
+  <script src="directives/UserPopUpDirective.js"></script>
+  <script src="directives/InfiniteScrollDirective.js"></script>
+  <script src="directives/NgRepeatRenderFinishDirective.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div>
+  <p ng-bind="con.text"></p>
+  <span>Отправлено: {{con.sends}}</span>
+  <a user-pop-up="{{con.author}}" href="#/author/{{con.author}}">Автор</a>
+  <button ng-click="sendCtrl.send(con.text)">Отправить</button>
+
+  <input ng-model="searchQuery" type="text" placeholder="Найти">
+  <ul style="height: 200px; overflow-y: auto;">
+    <li>
+      <input id="{{localUser.uid}}" type="checkbox" ng-model="localUser.selected" ng-change="sendCtrl.addSendFriend(localUser)">
+      <label for="{{localUser.uid}}">{{localUser.first_name}} {{localUser.last_name}}</label>
+    </li>
+    <li ng-repeat="friend in friends|filter:searchQuery">
+      <input id="{{friend.uid}}" type="checkbox" ng-model="friend.selected" ng-change="sendCtrl.addSendFriend(friend)">
+      <label for="{{friend.uid}}">{{friend.first_name}} {{friend.last_name}}</label>
+    </li>
+  </ul>
+
+  
+  <div>
+    <h4>Получатели</h4>
+    <ul>
+      <li ng-repeat="friend in sendFriends">
+      {{friend.first_name}} {{friend.last_name}}
+      <button ng-click="sendCtrl.addSendFriend(friend)">x</button>
+      </li>
+    </ul>
+  </div>
+</div>

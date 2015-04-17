@@ -1,0 +1,10 @@
+<div>
+  <h4>{{category.name}}</h4>
+    <hr>
+  <b>Всего поздравлений: <span>{{congratulations.length}}</span></b>
+
+  <div style="height: 200px; overflow-y: scroll;" ng-click="categoryCtrl.loadMore(1)" infinite-scroll="categoryCtrl.loadMore(2)">
+    <template root-path="parts/" template-url="ConList.html"></template>
+  </div>
+  
+</div>
